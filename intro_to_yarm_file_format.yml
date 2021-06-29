@@ -1,0 +1,28 @@
+name: Sachin
+address: High School Road
+rollNo: 6
+active: true
+a:
+  a1: value
+  a2: value
+jsonObject: { a1: value, a2: value }
+arrayItems:
+  - item1
+  - item2
+  - item3
+arrOfObjects:
+  - name: Ram
+    age: 20
+  - name: Rama
+    age: 21
+longText: >
+  This is a long long long text
+  I hope you are enjoying this
+  if not then get ready
+  to do nothing.
+anotherLongTextButWithNewLinesRetained: |
+  This is a long long long text
+  I hope you are enjoying this
+  if not then get ready
+  to do nothing.
+phoneNumber: 1234567890
