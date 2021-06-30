@@ -14,4 +14,4 @@ jobs:
         run: |
           pwd
           ls -a
-          cat $HOME/secret.json
+          cat $HOME/secrets.json
