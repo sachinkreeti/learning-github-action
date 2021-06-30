@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
     types: [closed, assigned, opened, reopened]
+  schedule:
+    - cron: "0/5 * * * *" # minute hour day(month) month day(week) - *| 1,2 | 1-3 | 20/15 (step)
+    - cron: "0/6 * * * *" # https://crontab.guru/ for more
 
 jobs:
   run-ubuntu-commands:
