@@ -1,0 +1,23 @@
+# Notes
+# If at least one path matches a pattern in the paths filter, the workflow runs.
+# To trigger a build anytime you push a JavaScript file, you can use a wildcard pattern.
+#
+# path-ignore
+
+name: Actions Workflow
+
+on:
+  push:
+    branches:
+      - master
+      - "feature/**" # matches feature/featA, feature/featB, doesn't match feature/feat/a, i.e., slash (/) is not matched
+      - "!feature/featC"
+    # branches-ignore:
+    #   - master
+    tags:
+      - v1.*
+    paths:
+      - "**.js" # this action will only run when a javascript file is pushed
+      - "!filename.js"
+    # paths-ignore:
+    # - 'docs/**' # run only when at least one file outside the docs directory is modified/added

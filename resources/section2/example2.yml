@@ -1,0 +1,18 @@
+# use postman to send a request to the right repository dispatch URL, (auth token required)
+# repository_dispatch type must match
+# can send client_payload as specified in the github document
+
+name: Actions Workflow
+
+on:
+  repository_dispatch:
+    types: [build]
+  pull_request:
+    types: [closed, assigned, opened, reopened]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: payload
+        run: echo ${{ github.event.client_payload.env }} # accessing client_payload

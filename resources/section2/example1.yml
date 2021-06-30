@@ -6,7 +6,7 @@ on:
     types: [closed, assigned, opened, reopened]
   schedule:
     - cron: "0/5 * * * *" # minute hour day(month) month day(week) - *| 1,2 | 1-3 | 20/15 (step)
-    - cron: "0/6 * * * *" # https://crontab.guru/ for more
+    - cron: "0/6 * * * *" # https://crontab.guru/ for more | also, minimal possible value is 5 minutes
 
 jobs:
   run-ubuntu-commands:
