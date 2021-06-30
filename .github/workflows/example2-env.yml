@@ -1,0 +1,12 @@
+name: ENV Variables
+on: [push]
+env:
+  ENCRYPTED_WF_ENV: ${{ secrets.ENCRYPTED_WF_ENV }}
+
+jobs:
+  print-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log ENV variables
+        run: |
+          echo "ENCRYPTED_WF_ENV ${ENCRYPTED_WF_ENV}"
