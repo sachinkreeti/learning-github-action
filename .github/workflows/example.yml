@@ -5,6 +5,9 @@ on: [push]
 jobs:
   setup:
     runs-on: ubuntu-18.04
+    steps:
+      - name: Setup Phase
+        run: echo "Setup Phase running!"
 
   job1:
     needs: ["setup"]
