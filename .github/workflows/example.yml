@@ -8,3 +8,9 @@ jobs:
     steps:
       - name: echo hello world string
         run: echo "Hello World!"
+
+  job2:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: echo hello world Again string
+        run: echo "Hello World Again!"
