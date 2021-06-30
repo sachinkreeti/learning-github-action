@@ -1,3 +1,6 @@
+# trying to use all steps on the same machine
+# removing ubuntu-18.04 from individual steps
+
 name: Check Parallel Running
 
 on: [push]
@@ -10,12 +13,14 @@ jobs:
         run: echo "Setup Phase running!"
 
   job1:
+    runs-on: ubuntu-18.04
     needs: ["setup"]
     steps:
       - name: echo hello world string
         run: echo "Hello World!"
 
   job2:
+    runs-on: ubuntu-18.04
     needs: ["setup"]
     steps:
       - name: echo hello world Again string
