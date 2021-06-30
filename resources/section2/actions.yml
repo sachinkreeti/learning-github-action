@@ -1,0 +1,12 @@
+name: Actions Workflow
+
+on:
+  push:
+  pull_request:
+    types: [closed, assigned, opened, reopened]
+
+jobs:
+  run-ubuntu-commands:
+    steps:
+      - name: Echo a string
+        run: echo "Hello World!"
