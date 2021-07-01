@@ -1,0 +1,39 @@
+# when one step fails, next steps will not run
+# we can use continue on error there
+# if: failure(), when added to one step will run that step in case of failure
+# but it will not run all the step
+# add continue-on-error to the step you want to ignore error for
+
+# timeout - can be added to job or step
+# 360 => 360 minutes
+
+name: Shell Commands
+
+on: [push]
+
+jobs:
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello World"
+        continue-on-error: true
+      - name: multi-line script
+        timeout-minutes: 2 # implies 2 minutes
+        run: |
+          node -v
+          npm -v
+      - name: python command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
+  run-windows-commands:
+    runs-on: windows-latest
+    needs: ["run-shell-commands"] # to run in serial fashion
+    steps:
+      - name: Directory Powershell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash
